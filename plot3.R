@@ -3,7 +3,7 @@ v <- b[b$Date == "1/2/2007"| b$Date =="2/2/2007",]
 v$Date <- strptime(paste(v$Date,v$Time),"%d/%m/%Y %H:%M:%S")
 v[,7:9] <- apply(v[,7:9],2,as.numeric)
 png("plot3.png")
-plot(v[,c(1,7)],type="l",ylab="Energy sub metering")
+plot(v[,c(1,7)],type="l",ylab="Energy sub metering",xlab="")
 lines(v[,c(1,8)],col="red")
 lines(v[,c(1,9)],col="blue")
 legend('topright', names(v)[7:9], lty=1, col=c('black', 'red', 'blue'))
